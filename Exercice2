@@ -1,0 +1,8 @@
+import numpy as np
+proba=np.array([1./6., 2./6., 3./6.])
+etats = np.array(["voiture", 'velo', 'trot'])
+simulation = np.random.choice(etats, size=10, replace=True, p=proba)
+print(simulation)
+
+norm = np.random.normal(4, np.sqrt(10), size = 10)
+print(norm)

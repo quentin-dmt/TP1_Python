@@ -1,0 +1,23 @@
+from scipy.special import gamma
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(0,20,200)
+y = (1./gamma(3.))*(x**2.)*(np.exp(-x))
+plt.plot(x,y)
+
+x1 = np.linspace(3,10,70)
+y1 = (1./gamma(3.))*(x1**2.)*(np.exp(-x1))
+plt.fill_between(x1,y1, color = 'blue', alpha = 0.3)
+plt.show()
+
+x3 = np.linspace(3,10,700)
+y3 = (1./gamma(3))*(x3**2)*(np.exp(-x3))
+print(((10.-3.)/700.)*np.sum(y3))
+
+def f(x) :
+    y = (1./gamma(3.))*(x**2.)*(np.exp(-x))
+    return(y)
+
+from scipy.integrate import quad
+print(quad(f,3.,10.))
